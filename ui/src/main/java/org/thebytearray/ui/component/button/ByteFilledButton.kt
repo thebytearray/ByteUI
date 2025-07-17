@@ -5,7 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun ByteButton(modifier: Modifier = Modifier) {
+fun ByteFilledButton(modifier: Modifier = Modifier) {
 
 
 
@@ -15,6 +15,6 @@ fun ByteButton(modifier: Modifier = Modifier) {
 
 @Preview
 @Composable
-private fun PreviewByteButton() {
+private fun PreviewByteFilledButton() {
     
 }
