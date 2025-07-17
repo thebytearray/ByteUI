@@ -1,4 +1,4 @@
-package org.thebytearray.ui.ui.theme
+package org.thebytearray.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
