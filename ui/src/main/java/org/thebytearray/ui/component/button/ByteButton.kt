@@ -18,7 +18,11 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import org.thebytearray.ui.theme.Neutral200
+import org.thebytearray.ui.theme.Neutral50
 import org.thebytearray.ui.theme.Neutral700
+import org.thebytearray.ui.theme.Neutral900
+import org.thebytearray.ui.theme.Typography
+
 
 @Composable
 fun ByteOutlinedButton(
@@ -26,7 +30,7 @@ fun ByteOutlinedButton(
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
     shape: Shape = RoundedCornerShape(size = 6.dp),
-    colors: ButtonColors = ButtonDefaults.buttonColors(
+    colors: ButtonColors = ButtonDefaults.outlinedButtonColors(
         containerColor = Color.Transparent, contentColor = Neutral700
     ),
     elevation: ButtonElevation? = ButtonDefaults.buttonElevation(),
@@ -51,13 +55,55 @@ fun ByteOutlinedButton(
     )
 }
 
+
+@Composable
+fun ByteFilledButton(
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
+    shape: Shape = RoundedCornerShape(size = 6.dp),
+    colors: ButtonColors = ButtonDefaults.filledTonalButtonColors(
+        containerColor = Neutral900, contentColor = Neutral50
+    ),
+    elevation: ButtonElevation? = ButtonDefaults.buttonElevation(),
+    border: BorderStroke? = null,
+    contentPadding: PaddingValues = ButtonDefaults.ContentPadding,
+    interactionSource: MutableInteractionSource? = null,
+    content: @Composable RowScope.() -> Unit
+) {
+    Button(
+        onClick = onClick,
+        modifier = modifier.defaultMinSize(
+            minWidth = ByteButtonDefaults.MinWidth, minHeight = ByteButtonDefaults.MinHeight
+        ),
+        enabled = enabled,
+        shape = shape,
+        colors = colors,
+        elevation = elevation,
+        border = border,
+        contentPadding = contentPadding,
+        interactionSource = interactionSource,
+        content = content
+    )
+}
+
+
 @Preview(showBackground = true, backgroundColor = 0x00000000)
 @Composable
 private fun PreviewByteOutlinedButton() {
     ByteOutlinedButton(onClick = {}) {
-        Text(text = "Cancel")
+        Text(text = "Cancel", style = Typography.bodyMedium)
     }
 }
+
+@Preview(showBackground = true, backgroundColor = 0x00000000)
+@Composable
+private fun PreviewByteFilledButton() {
+    ByteFilledButton(onClick = {}) {
+        Text(text = "Continue", style = Typography.bodyMedium)
+    }
+}
+
 
 object ByteButtonDefaults {
     /**
