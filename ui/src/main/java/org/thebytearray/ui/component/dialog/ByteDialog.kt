@@ -1,46 +1,38 @@
-package org.thebytearray.app
+package org.thebytearray.ui.component.dialog
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
+import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import org.thebytearray.app.ui.theme.ByteUITheme
+import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.window.DialogProperties
 import org.thebytearray.ui.component.button.ByteFilledButton
 import org.thebytearray.ui.component.button.ByteOutlinedButton
-import org.thebytearray.ui.component.dialog.ByteDialog
+import org.thebytearray.ui.component.card.ByteCard
 import org.thebytearray.ui.component.text.ByteText
 
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            ByteUITheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
-    }
+@Composable
+fun ByteDialog(
+    onDismissRequest: () -> Unit,
+    properties: DialogProperties = DialogProperties(),
+    content: @Composable () -> Unit
+) {
+    Dialog(
+        onDismissRequest = onDismissRequest,
+        properties = properties,
+        content = { ByteCard(modifier = Modifier.wrapContentSize()) { content() } })
 }
 
+@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+private fun PreviewByteDialogWithButtons() {
     ByteDialog(onDismissRequest = {}) {
         Column(modifier = Modifier.padding(16.dp)) {
             ByteText(
@@ -63,15 +55,5 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
                 }
             }
         }
-    }
-
-
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ByteUITheme {
-        Greeting("Android")
     }
 }

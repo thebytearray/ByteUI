@@ -18,8 +18,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.tooling.preview.UiMode
 import androidx.compose.ui.unit.dp
+import org.thebytearray.ui.component.text.ByteText
 import org.thebytearray.ui.theme.Neutral200
 import org.thebytearray.ui.theme.Neutral50
 import org.thebytearray.ui.theme.Neutral600
@@ -103,7 +103,7 @@ fun ByteFilledButton(
 @Composable
 private fun PreviewByteDarkOutlinedButton() {
     ByteOutlinedButton(onClick = {}) {
-        Text(text = "Cancel", style = Typography.bodyMedium)
+        ByteText(text = "Cancel", style = Typography.bodyMedium)
     }
 }
 
@@ -112,7 +112,7 @@ private fun PreviewByteDarkOutlinedButton() {
 @Composable
 private fun PreviewByteLightOutlinedButton() {
     ByteOutlinedButton(onClick = {}) {
-        Text(text = "Cancel", style = Typography.bodyMedium)
+        ByteText(text = "Cancel", style = Typography.bodyMedium)
     }
 }
 
@@ -121,7 +121,7 @@ private fun PreviewByteLightOutlinedButton() {
 @Composable
 private fun PreviewByteLightFilledButton() {
     ByteFilledButton(onClick = {}) {
-        Text(text = "Continue", style = Typography.bodyMedium)
+        ByteText(text = "Continue", style = Typography.bodyMedium)
     }
 }
 
@@ -134,7 +134,7 @@ private fun PreviewByteLightFilledButton() {
 @Composable
 private fun PreviewByteDarkFilledButton() {
     ByteFilledButton(onClick = {}) {
-        Text(text = "Continue", style = Typography.bodyMedium)
+        ByteText(text = "Continue", style = Typography.bodyMedium)
     }
 }
 
