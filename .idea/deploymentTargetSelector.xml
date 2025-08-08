@@ -8,6 +8,9 @@
       <SelectionState runConfigName="ui">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
+      <SelectionState runConfigName="PreviewByteDarkFilledButton - Dark Filled">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
     </selectionStates>
   </component>
 </project>
