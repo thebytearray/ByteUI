@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -20,6 +21,8 @@ import org.thebytearray.app.ui.theme.ByteUITheme
 import org.thebytearray.ui.component.button.ByteFilledButton
 import org.thebytearray.ui.component.button.ByteOutlinedButton
 import org.thebytearray.ui.component.dialog.ByteDialog
+import org.thebytearray.ui.component.picker.ByteDatePicker
+import org.thebytearray.ui.component.sheet.ByteBottomSheet
 import org.thebytearray.ui.component.text.ByteText
 
 class MainActivity : ComponentActivity() {
@@ -39,31 +42,9 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    ByteDialog(onDismissRequest = {}) {
-        Column(modifier = Modifier.padding(16.dp)) {
-            ByteText(
-                text = "Are you sure you want to continue?",
-                modifier = Modifier.padding(bottom = 24.dp)
-            )
-            Row(
-                horizontalArrangement = Arrangement.spacedBy(12.dp),
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                ByteOutlinedButton(
-                    onClick = { /* Handle Cancel */ }, modifier = Modifier.weight(1f)
-                ) {
-                    ByteText(text = "Cancel")
-                }
-                ByteFilledButton(
-                    onClick = { /* Handle Continue */ }, modifier = Modifier.weight(1f)
-                ) {
-                    ByteText(text = "Continue")
-                }
-            }
-        }
-    }
 
 
 }
