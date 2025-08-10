@@ -24,7 +24,7 @@ dependencyResolutionManagement {
 
 ```kotlin
 dependencies {
-    implementation("com.github.thebytearray:byteui:Tag")
+    implementation("com.github.thebytearray:ByteUI:Tag")
 }
 ```
 
