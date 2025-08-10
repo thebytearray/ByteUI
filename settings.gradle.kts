@@ -21,4 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "ByteUI"
 include(":ui")
-include(":app")
