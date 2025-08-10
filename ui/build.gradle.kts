@@ -2,11 +2,12 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.maven)
 }
 
 android {
     namespace = "org.thebytearray.ui"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         minSdk = 21
@@ -33,7 +34,28 @@ android {
     buildFeatures {
         compose = true
     }
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }
+
+publishing {
+    publications {
+        create("release", MavenPublication::class) {
+            groupId = "com.github.thebytearray"
+            artifactId = "ui"
+            version = "1.0.0-beta"
+
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
+}
+
 
 dependencies {
 
