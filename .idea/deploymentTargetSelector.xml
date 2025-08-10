@@ -22,6 +22,9 @@
       <SelectionState runConfigName="PreviewByteTextFieldDark">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
+      <SelectionState runConfigName="PreviewByteProgressBarDark">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
     </selectionStates>
   </component>
 </project>

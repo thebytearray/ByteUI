@@ -67,6 +67,7 @@ fun ByteProgressBar(
             )
         }
     }
+
 }
 
 @Preview(showBackground = true)
