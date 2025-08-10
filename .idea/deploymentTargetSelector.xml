@@ -19,6 +19,9 @@
       <SelectionState runConfigName="PreviewByteDarkFilledButton - Dark Filled">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
+      <SelectionState runConfigName="PreviewByteTextFieldDark">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
     </selectionStates>
   </component>
 </project>
